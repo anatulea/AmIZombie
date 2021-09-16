@@ -17,7 +17,7 @@ const itemHorizontalMargin = wp(2);
 
 const itemWidth = slideWidth + itemHorizontalMargin * 2;
 
-export class MyCarousel extends React.Component {
+export class GoalsCarousel extends React.Component {
   constructor(props) {
     super(props);
     this.state = {

@@ -8,17 +8,9 @@ import {
   Oswald_400Regular,
 } from "@expo-google-fonts/oswald";
 import { useFonts as useLato, Lato_400Regular } from "@expo-google-fonts/lato";
-
 import { theme } from "./src/infrastructure/theme";
-import { MyCarousel } from "./src/features/goals/screens/goals-carousel.screen";
-import { GoalsHeader } from "./src/features/goals/components/goals-header.component";
-import styled from "styled-components/native";
+import { Navigation } from "./src/infrastructure/navigation/index";
 
-const SafeArea = styled(SafeAreaView)`
-  flex: 1;
-  ${StatusBar.currentHeight && `margin-top: ${StatusBar.currentHeight}px`};
-  background-color: ${(props) => props.theme.colors.brand.muted};
-`;
 export default function App() {
   const [oswaldLoaded] = useOswald({
     Oswald_400Regular,
@@ -39,11 +31,7 @@ export default function App() {
           Space for nav bar
         </Text>
       </View>
-      <SafeArea>
-        <GoalsHeader />
-        <MyCarousel />
-      </SafeArea>
-
+      <Navigation />
       <ExpoStatusBar style="auto" />
     </ThemeProvider>
   );

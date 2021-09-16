@@ -1,8 +1,8 @@
 import React from "react";
 import { StatusBar, SafeAreaView } from "react-native";
 import styled from "styled-components/native";
-
-import { GoalInfoCard } from "../components/goal-info-card.component";
+import { GoalsHeader } from "../components/goals-header.component";
+import { GoalsCarousel } from "./goals-carousel.screen";
 
 const SafeArea = styled(SafeAreaView)`
   flex: 1;
@@ -16,7 +16,8 @@ const GoalListContainer = styled.View`
 export const GoalsScreen = () => (
   <SafeArea>
     <GoalListContainer>
-      <GoalInfoCard />
+      <GoalsHeader />
+      <GoalsCarousel />
     </GoalListContainer>
   </SafeArea>
 );
