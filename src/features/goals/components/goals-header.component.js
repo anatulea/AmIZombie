@@ -15,7 +15,6 @@ const Title = styled(Text)`
   font-family: ${(props) => props.theme.fonts.heading};
   font-size: ${(props) => props.theme.fontSizes.title};
   text-align: center;
-  margin-top: 50px;
 `;
 
 const Description = styled(Paragraph)`

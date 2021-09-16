@@ -1,5 +1,7 @@
+/* eslint-disable react-native/no-inline-styles */
 import { StatusBar as ExpoStatusBar } from "expo-status-bar";
 import React from "react";
+import { View, Text } from "react-native";
 import { ThemeProvider } from "styled-components/native";
 import {
   useFonts as useOswald,
@@ -26,6 +28,11 @@ export default function App() {
 
   return (
     <ThemeProvider theme={theme}>
+      <View style={{ height: 70, backgroundColor: "#68417f" }}>
+        <Text style={{ textAlign: "center", marginTop: 40 }}>
+          Space for nav bar
+        </Text>
+      </View>
       <GoalsHeader />
       <MyCarousel />
       <ExpoStatusBar style="auto" />
