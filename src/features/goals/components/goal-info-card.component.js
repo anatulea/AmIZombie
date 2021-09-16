@@ -26,27 +26,13 @@ const Description = styled(Paragraph)`
   font-size: ${(props) => props.theme.fontSizes.caption};
 `;
 
-const goals = [
-  {
-    name: "Spiritual",
-    description:
-      "La parte espiritual forma una parte importante de quiénes somos; de u árbol de vida, y por ello debes tenerla presente.",
-    source: require("../../../../assets/svg-icons/social.png"),
-  },
-  {
-    name: "Work",
-    description:
-      "La parte espiritual forma una parte importante de quiénes somos; de u árbol de vida, y por ello debes tenerla presente.",
-    source: require("../../../../assets/svg-icons/developer.png"),
-  },
-];
-export const GoalInfoCard = () => {
+export const GoalInfoCard = ({ goalName, goalDescription, goalSource }) => {
   return (
     <GoalCard>
-      <GoalCover source={goals[0].source} />
+      <GoalCover source={goalSource} />
       <GoalDescription>
-        <Title>{goals[0].name}</Title>
-        <Description>{goals[0].description}</Description>
+        <Title>{goalName}</Title>
+        <Description>{goalDescription}</Description>
       </GoalDescription>
     </GoalCard>
   );

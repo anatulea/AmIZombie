@@ -8,8 +8,8 @@ import {
 import { useFonts as useLato, Lato_400Regular } from "@expo-google-fonts/lato";
 
 import { theme } from "./src/infrastructure/theme";
-
-import { GoalsScreen } from "./src/features/goals/screens/goals.screen";
+import { MyCarousel } from "./src/features/goals/screens/goals-carousel.screen";
+import { GoalsHeader } from "./src/features/goals/components/goals-header.component";
 
 export default function App() {
   const [oswaldLoaded] = useOswald({
@@ -26,7 +26,8 @@ export default function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <GoalsScreen />
+      <GoalsHeader />
+      <MyCarousel />
       <ExpoStatusBar style="auto" />
     </ThemeProvider>
   );

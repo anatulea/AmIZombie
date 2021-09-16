@@ -25,4 +25,11 @@ export const colors = {
     error: "#D0421B",
     success: "#138000",
   },
+  pretty: {
+    dark_blue: "#219bc3",
+    light_blue: "#b2d3e1",
+    pink: "#f2cfda",
+    light_purple: "#c66aab",
+    dark_purple: "#68417f",
+  },
 };
