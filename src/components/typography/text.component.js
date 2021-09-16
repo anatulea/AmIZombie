@@ -32,12 +32,18 @@ const label = (theme) => `
     font-family: ${theme.fonts.heading};
     font-size: ${theme.fontSizes.body};
     font-weight: ${theme.fontWeights.medium};
-    color: ${theme.colors.pretty.light_purple};
+    text-align: center;
 `;
 const description = (theme) => `
     font-size: ${theme.fontSizes.boton};
     font-weight: ${theme.fontWeights.regular};
     font-family: ${theme.fonts.heading};
+`;
+const title = (theme) => `
+ color: ${theme.colors.ui.primary};
+  font-family: ${theme.fonts.heading};
+  font-size: ${theme.fontSizes.title};
+  text-align: center;
 `;
 
 const variants = {
@@ -47,6 +53,7 @@ const variants = {
   error,
   hint,
   description,
+  title,
 };
 
 export const Text = styled.Text`
