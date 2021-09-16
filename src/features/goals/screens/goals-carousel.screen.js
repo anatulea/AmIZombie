@@ -2,7 +2,7 @@
 import React from "react";
 import Carousel, { Pagination } from "react-native-snap-carousel";
 import { GoalInfoCard } from "../components/goal-info-card.component";
-import { StatusBar, SafeAreaView, View, Text, Dimensions } from "react-native";
+import { View, Text, Dimensions, ScrollView } from "react-native";
 import styled from "styled-components/native";
 
 const { width: viewportWidth } = Dimensions.get("window");
@@ -16,12 +16,6 @@ const slideWidth = wp(75);
 const itemHorizontalMargin = wp(2);
 
 const itemWidth = slideWidth + itemHorizontalMargin * 2;
-const SafeArea = styled(SafeAreaView)`
-  flex: 1;
-  ${StatusBar.currentHeight && `margin-top: ${StatusBar.currentHeight}px`};
-  background-color: ${(props) => props.theme.colors.brand.muted};
-  padding-top: 50px;
-`;
 
 export class MyCarousel extends React.Component {
   constructor(props) {
@@ -70,7 +64,7 @@ export class MyCarousel extends React.Component {
   get pagination() {
     const { carouselItems, activeIndex, slider1Ref } = this.state;
     return (
-      <View>
+      <ScrollView>
         <Carousel
           ref={(c) => {
             if (!this.state.slider1Ref) {
@@ -110,17 +104,17 @@ export class MyCarousel extends React.Component {
           carouselRef={slider1Ref}
           tappableDots={!!slider1Ref}
         />
-      </View>
+      </ScrollView>
     );
   }
   render() {
     return (
-      <SafeArea>
+      <View>
         <View>{this.pagination}</View>
-        <View style={{ height: 70, backgroundColor: "#68417f" }}>
+        <View style={{ height: 200, backgroundColor: "#68417f" }}>
           <Text> Space for nav bar</Text>
         </View>
-      </SafeArea>
+      </View>
     );
   }
 }

@@ -1,7 +1,7 @@
 /* eslint-disable react-native/no-inline-styles */
 import { StatusBar as ExpoStatusBar } from "expo-status-bar";
 import React from "react";
-import { View, Text } from "react-native";
+import { View, Text, SafeAreaView, StatusBar } from "react-native";
 import { ThemeProvider } from "styled-components/native";
 import {
   useFonts as useOswald,
@@ -12,7 +12,13 @@ import { useFonts as useLato, Lato_400Regular } from "@expo-google-fonts/lato";
 import { theme } from "./src/infrastructure/theme";
 import { MyCarousel } from "./src/features/goals/screens/goals-carousel.screen";
 import { GoalsHeader } from "./src/features/goals/components/goals-header.component";
+import styled from "styled-components/native";
 
+const SafeArea = styled(SafeAreaView)`
+  flex: 1;
+  ${StatusBar.currentHeight && `margin-top: ${StatusBar.currentHeight}px`};
+  background-color: ${(props) => props.theme.colors.brand.muted};
+`;
 export default function App() {
   const [oswaldLoaded] = useOswald({
     Oswald_400Regular,
@@ -33,8 +39,11 @@ export default function App() {
           Space for nav bar
         </Text>
       </View>
-      <GoalsHeader />
-      <MyCarousel />
+      <SafeArea>
+        <GoalsHeader />
+        <MyCarousel />
+      </SafeArea>
+
       <ExpoStatusBar style="auto" />
     </ThemeProvider>
   );
