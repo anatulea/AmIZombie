@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components/native";
 import { Text, Alert } from "react-native";
 import { Card, Button, Paragraph } from "react-native-paper";
+// import { Spacer } from "../../../components/spacer/spacer.component";
 
 const GoalCard = styled(Card)`
   background-color: ${(props) => props.theme.colors.bg.primary};
