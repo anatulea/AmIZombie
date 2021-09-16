@@ -1,47 +1,20 @@
 import React from "react";
-import styled from "styled-components/native";
-import { Text, Alert } from "react-native";
-import { Card, Button, Paragraph } from "react-native-paper";
-// import { Spacer } from "../../../components/spacer/spacer.component";
-
-const GoalCard = styled(Card)`
-  background-color: ${(props) => props.theme.colors.bg.primary};
-`;
-
-const GoalCover = styled(Card.Cover)`
-  padding: ${(props) => props.theme.space[3]};
-  background-color: ${(props) => props.theme.colors.bg.primary};
-`;
-
-const Title = styled(Text)`
-  color: ${(props) => props.theme.colors.ui.primary};
-  font-family: ${(props) => props.theme.fonts.heading};
-  font-size: ${(props) => props.theme.fontSizes.title};
-`;
-const GoalDescription = styled(Card.Content)`
-  padding: ${(props) => props.theme.space[3]};
-`;
-const Description = styled(Paragraph)`
-  color: ${(props) => props.theme.colors.ui.primary};
-  font-family: ${(props) => props.theme.fonts.body};
-  font-size: ${(props) => props.theme.fontSizes.caption};
-`;
-const GoalButton = styled(Button).attrs({
-  color: "#68417f",
-})`
-  padding: ${(props) => props.theme.space[1]};
-  border-radius: 50px;
-  width: 70%;
-  margin: 5px auto;
-`;
+import { Alert } from "react-native";
+import { Text } from "../../../components/typography/text.component";
+import {
+  GoalCard,
+  GoalCover,
+  GoalDescription,
+  GoalButton,
+} from "./goal-info-card.styles";
 
 export const GoalInfoCard = ({ goalName, goalDescription, goalSource }) => {
   return (
     <GoalCard>
       <GoalCover source={goalSource} />
       <GoalDescription>
-        <Title>{goalName}</Title>
-        <Description>{goalDescription}</Description>
+        <Text variant="label">{goalName}</Text>
+        <Text variant="description">{goalDescription}</Text>
         <GoalButton
           icon="plus"
           mode="outlined"
