@@ -45,6 +45,10 @@ const title = (theme) => `
   font-size: ${theme.fontSizes.title};
   text-align: center;
 `;
+const h4 = (theme) => `
+font-size: ${theme.fontSizes.h4};
+font-family: ${theme.fonts.heading};
+`;
 
 const variants = {
   body,
@@ -54,6 +58,7 @@ const variants = {
   hint,
   description,
   title,
+  h4,
 };
 
 export const Text = styled.Text`

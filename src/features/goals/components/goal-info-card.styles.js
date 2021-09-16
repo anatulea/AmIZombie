@@ -1,5 +1,6 @@
 import styled from "styled-components/native";
 import { Card, Button } from "react-native-paper";
+
 export const GoalCard = styled(Card)`
   background-color: ${(props) => props.theme.colors.bg.primary};
 `;
@@ -7,6 +8,7 @@ export const GoalCard = styled(Card)`
 export const GoalCover = styled(Card.Cover)`
   padding: ${(props) => props.theme.space[3]};
   background-color: ${(props) => props.theme.colors.bg.primary};
+  height: 200px;
 `;
 
 export const GoalDescription = styled(Card.Content)`

@@ -2,17 +2,17 @@
 import React from "react";
 import Carousel, { Pagination } from "react-native-snap-carousel";
 import { GoalInfoCard } from "../components/goal-info-card.component";
-import { View, Text, Dimensions, ScrollView } from "react-native";
-import styled from "styled-components/native";
+import { View, Dimensions, ScrollView } from "react-native";
 
 const { width: viewportWidth } = Dimensions.get("window");
+
 function wp(percentage) {
   const value = (percentage * viewportWidth) / 100;
   return Math.round(value);
 }
 
 const sliderWidth = viewportWidth;
-const slideWidth = wp(75);
+const slideWidth = wp(76);
 const itemHorizontalMargin = wp(2);
 
 const itemWidth = slideWidth + itemHorizontalMargin * 2;
@@ -108,13 +108,6 @@ export class GoalsCarousel extends React.Component {
     );
   }
   render() {
-    return (
-      <View>
-        <View>{this.pagination}</View>
-        <View style={{ height: 200, backgroundColor: "#68417f" }}>
-          <Text> Space for nav bar</Text>
-        </View>
-      </View>
-    );
+    return <View>{this.pagination}</View>;
   }
 }

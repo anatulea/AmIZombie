@@ -3,16 +3,8 @@ import { View, Text } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { GoalsScreen } from "../../features/goals/screens/goals.screen";
-
+import { HomeScreen } from "../../features/home/screens/home.screen";
 const Tab = createBottomTabNavigator();
-
-function HomeScreen() {
-  return (
-    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-      <Text>Home!</Text>
-    </View>
-  );
-}
 
 function SettingsScreen() {
   return (
@@ -23,6 +15,7 @@ function SettingsScreen() {
 }
 
 const TAB_ICON = {
+  Home: "md-home",
   Goals: "md-shield-checkmark",
   Map: "md-map",
   Checkout: "md-cart",
@@ -48,6 +41,7 @@ const createScreenOptions = ({ route }) => {
 export const AppNavigator = () => {
   return (
     <Tab.Navigator screenOptions={createScreenOptions}>
+      <Tab.Screen name="Home" component={HomeScreen} />
       <Tab.Screen name="Goals" component={GoalsScreen} />
       <Tab.Screen name="Checkout" component={SettingsScreen} />
       <Tab.Screen name="Map" component={HomeScreen} />
