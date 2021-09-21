@@ -2,7 +2,7 @@ import React from "react";
 import { Alert } from "react-native";
 import { Spacer } from "../../../components/spacer/spacer.component";
 
-import { ButtonHome } from "./home-buttons.style";
+import { ButtonHome } from "./styles/home-buttons.style";
 
 export const HomeButtons = () => {
   return (

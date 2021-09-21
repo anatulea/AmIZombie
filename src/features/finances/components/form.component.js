@@ -12,7 +12,7 @@ import { FinanceRadioButtons } from "./radio-buttons.component";
 import { FinanceDatePicker } from "./date-picker.component";
 import { useForm, Controller } from "react-hook-form";
 
-export const FormComponent = () => {
+export const FormComponent = ({ setFormStatus }) => {
   const {
     control,
     handleSubmit,
@@ -36,6 +36,7 @@ export const FormComponent = () => {
     });
     setChecked("");
     setDate(new Date(Date.now()));
+    setFormStatus(false);
     Object.assign(data, { checked: checked, date: date });
     console.log("data from submit", data);
   };

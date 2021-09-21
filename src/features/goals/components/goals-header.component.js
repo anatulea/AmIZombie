@@ -4,7 +4,7 @@ import {
   HeaderCard,
   HeaderDescription,
   DescriptionLevels,
-} from "./goals-header.styles";
+} from "./styles/goals-header.styles";
 
 export const GoalsHeader = () => {
   return (

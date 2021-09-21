@@ -6,7 +6,7 @@ import {
   GoalCover,
   GoalDescription,
   GoalButton,
-} from "./goal-info-card.styles";
+} from "./styles/goal-info-card.styles";
 
 export const GoalInfoCard = ({ goalName, goalDescription, goalSource }) => {
   return (

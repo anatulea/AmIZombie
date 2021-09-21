@@ -1,28 +1,28 @@
 import React from "react";
-import { Text } from "../../../components/typography/text.component";
-import { HeaderCard, HeaderDescription } from "./home-header.styles";
-import { Image } from "react-native";
+import {
+  HeaderCard,
+  HeaderDescriptionContainer,
+  DescriptionLevels,
+  Title,
+  HomeImage,
+} from "./styles/home-header.style";
 import { HomeButtons } from "./home-buttons.component";
 
 export const HomeHeader = () => {
   return (
     <HeaderCard>
-      <HeaderDescription>
-        <Text variant="h4">MUERTO VIVIENTE</Text>
-        <Text variant="label">
+      <HeaderDescriptionContainer>
+        <Title>MUERTO VIVIENTE</Title>
+        <DescriptionLevels>
           Muerto estás, comienza a establecer metas y dar pasos de nuevo hacia
           la vida.
-        </Text>
-        <Image
-          style={{ width: 300, height: 300 }}
-          source={require("../../../../assets/4.png")}
-        />
-
-        <Text variant="label">
+        </DescriptionLevels>
+        <HomeImage />
+        <DescriptionLevels>
           ¿Ya completaste tus tareas de hoy para alcanzar tus metas?
-        </Text>
+        </DescriptionLevels>
         <HomeButtons />
-      </HeaderDescription>
+      </HeaderDescriptionContainer>
     </HeaderCard>
   );
 };
