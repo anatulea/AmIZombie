@@ -9,6 +9,8 @@ npm-debug.*
 *.orig.*
 web-build/
 .vscode
+.idea
+yarn.lock
 
 # macOS
 .DS_Store

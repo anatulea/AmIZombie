@@ -4,6 +4,7 @@ import { Ionicons } from "@expo/vector-icons";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { GoalsScreen } from "../../features/goals/screens/goals.screen";
 import { HomeScreen } from "../../features/home/screens/home.screen";
+import { FinancialScreen } from "../../features/finances/screens/financial.screen";
 const Tab = createBottomTabNavigator();
 
 function SettingsScreen() {
@@ -18,7 +19,7 @@ const TAB_ICON = {
   Home: "md-home",
   Goals: "md-shield-checkmark",
   Map: "md-map",
-  Checkout: "md-cart",
+  Finances: "wallet-sharp",
   Settings: "md-settings",
 };
 
@@ -43,7 +44,7 @@ export const AppNavigator = () => {
     <Tab.Navigator screenOptions={createScreenOptions}>
       <Tab.Screen name="Home" component={HomeScreen} />
       <Tab.Screen name="Goals" component={GoalsScreen} />
-      <Tab.Screen name="Checkout" component={SettingsScreen} />
+      <Tab.Screen name="Finances" component={FinancialScreen} />
       <Tab.Screen name="Map" component={HomeScreen} />
       <Tab.Screen name="Settings" component={SettingsScreen} />
     </Tab.Navigator>
